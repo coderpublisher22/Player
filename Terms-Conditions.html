@@ -1,0 +1,497 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - AbMy Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .particle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: rgba(139, 92, 246, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15);
+            text-align: center;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #8B5CF6;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #A78BFA;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        p, li {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        li::marker {
+            color: #8B5CF6;
+        }
+
+        strong {
+            color: #C4B5FD;
+            font-weight: 600;
+        }
+
+        .warning-box {
+            background: rgba(236, 72, 153, 0.1);
+            border-left: 4px solid #EC4899;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .info-box {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid #8B5CF6;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .footer a {
+            color: #8B5CF6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #A78BFA;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .header, .content { padding: 25px; }
+            body { padding: 15px; }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8B5CF6, #EC4899);
+            z-index: 1000;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    <script>
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            document.body.appendChild(particle);
+        }
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollIndicator').style.width = scrolled + '%';
+        });
+    </script>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+                </svg>
+            </div>
+            <h1>Terms & Conditions</h1>
+            <p class="subtitle">Please read these terms carefully before using AbMy Player</p>
+            <span class="last-updated">Last Updated: November 4, 2025</span>
+        </div>
+
+        <div class="content">
+            <div class="warning-box">
+                <p><strong>⚠️ Important:</strong> By downloading, installing, or using AbMy Player, you agree to be bound by these Terms & Conditions. If you do not agree, do not use this app.</p>
+            </div>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>These Terms & Conditions ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and AbMy Player ("we," "our," or "us") regarding your use of the AbMy Player mobile application ("App").</p>
+            <p>By accessing or using the App, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+
+            <h2>2. Service Description</h2>
+            
+            <h3>2.1 What AbMy Player Is</h3>
+            <p>AbMy Player is an <strong>IPTV media player application</strong> designed to play streaming content from IPTV services that you have legally subscribed to.</p>
+
+            <h3>2.2 What AbMy Player Is NOT</h3>
+            <div class="warning-box">
+                <p><strong>AbMy Player does NOT:</strong></p>
+                <ul style="margin-top: 10px; margin-bottom: 0;">
+                    <li>Provide, host, or distribute any IPTV content or channels</li>
+                    <li>Sell or offer IPTV subscriptions or services</li>
+                    <li>Have any affiliation with IPTV service providers</li>
+                    <li>Control or curate the content available through the App</li>
+                    <li>Guarantee the availability, quality, or legality of any content</li>
+                </ul>
+            </div>
+
+            <h2>3. User Responsibilities</h2>
+            
+            <h3>3.1 Legal Use Only</h3>
+            <p>You agree to use AbMy Player <strong>only for legal purposes</strong>. You are solely responsible for ensuring that:</p>
+            <ul>
+                <li>You have the legal right to access any content you stream through the App</li>
+                <li>Your IPTV service subscription is obtained from a legitimate provider</li>
+                <li>You comply with all applicable copyright and intellectual property laws</li>
+                <li>You do not use the App to access pirated or illegal content</li>
+            </ul>
+
+            <h3>3.2 IPTV Service Requirements</h3>
+            <p>To use AbMy Player, you must:</p>
+            <ul>
+                <li>Have an active subscription with a legal IPTV service provider</li>
+                <li>Provide your own IPTV credentials (server URL, username, password)</li>
+                <li>Ensure your IPTV service is compatible with the App</li>
+                <li>Maintain the security and confidentiality of your credentials</li>
+            </ul>
+
+            <h3>3.3 Account Security</h3>
+            <ul>
+                <li>You are responsible for maintaining the confidentiality of your IPTV credentials</li>
+                <li>You must not share your account with unauthorized users</li>
+                <li>You must notify us immediately of any unauthorized access</li>
+                <li>You are liable for all activities under your account</li>
+            </ul>
+
+            <h2>4. Prohibited Uses</h2>
+            <p>You agree NOT to use AbMy Player for any of the following purposes:</p>
+            <ul>
+                <li><strong>Illegal Streaming:</strong> Accessing copyrighted content without proper authorization</li>
+                <li><strong>Piracy:</strong> Using unauthorized or pirated IPTV services</li>
+                <li><strong>Redistribution:</strong> Sharing, reselling, or redistributing IPTV credentials</li>
+                <li><strong>Hacking:</strong> Attempting to bypass security measures or DRM protections</li>
+                <li><strong>Abuse:</strong> Overloading servers or conducting denial-of-service attacks</li>
+                <li><strong>Commercial Use:</strong> Using the App for commercial purposes without permission</li>
+            </ul>
+
+            <h2>5. Intellectual Property</h2>
+            
+            <h3>5.1 App Ownership</h3>
+            <p>The App, including its design, code, graphics, and features, is owned by AbMy Player and is protected by copyright and intellectual property laws.</p>
+
+            <h3>5.2 License Grant</h3>
+            <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes, subject to these Terms.</p>
+
+            <h3>5.3 Restrictions</h3>
+            <p>You may NOT:</p>
+            <ul>
+                <li>Copy, modify, or create derivative works of the App</li>
+                <li>Reverse engineer, decompile, or disassemble the App</li>
+                <li>Remove or alter any copyright notices or trademarks</li>
+                <li>Sell, rent, lease, or sublicense the App</li>
+            </ul>
+
+            <h2>6. Disclaimers and Limitations of Liability</h2>
+            
+            <h3>6.1 "As Is" Basis</h3>
+            <div class="info-box">
+                <p><strong>The App is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</strong></p>
+            </div>
+
+            <h3>6.2 No Responsibility for Content</h3>
+            <p>We are NOT responsible for:</p>
+            <ul>
+                <li>The content available through your IPTV service</li>
+                <li>The quality, accuracy, or legality of any content</li>
+                <li>Any offensive, inappropriate, or illegal content</li>
+                <li>The actions or policies of your IPTV service provider</li>
+            </ul>
+
+            <h3>6.3 Service Availability</h3>
+            <p>We do not guarantee that:</p>
+            <ul>
+                <li>The App will be available at all times without interruption</li>
+                <li>The App will be error-free or bug-free</li>
+                <li>Your IPTV service will be compatible with the App</li>
+                <li>Any defects will be corrected promptly</li>
+            </ul>
+
+            <h3>6.4 Limitation of Liability</h3>
+            <p><strong>To the maximum extent permitted by law, AbMy Player and its developers shall NOT be liable for:</strong></p>
+            <ul>
+                <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Loss of profits, data, or goodwill</li>
+                <li>Service interruptions or data loss</li>
+                <li>Damages arising from your use of third-party IPTV services</li>
+                <li>Any damages exceeding the amount you paid for the App (if applicable)</li>
+            </ul>
+
+            <h2>7. Third-Party Services</h2>
+            <p>The App may integrate with third-party services, including:</p>
+            <ul>
+                <li><strong>IPTV Providers:</strong> Your IPTV service provider's terms apply</li>
+                <li><strong>Advertising (if enabled):</strong> Google AdMob terms and privacy policy apply</li>
+                <li><strong>Analytics:</strong> Anonymized analytics services</li>
+            </ul>
+            <p>We are not responsible for the practices, content, or policies of any third-party services.</p>
+
+            <h2>8. Privacy and Data Collection</h2>
+            <p>Your use of the App is also governed by our <a href="privacy-policy.html" style="color: #8B5CF6; text-decoration: none;">Privacy Policy</a>. Please review it to understand how we collect, use, and protect your information.</p>
+
+            <h2>9. Age Restrictions</h2>
+            <p>The App is not intended for children under the age of 13. By using the App, you confirm that you are at least 13 years old (or the age of majority in your jurisdiction).</p>
+
+            <h2>10. Termination</h2>
+            
+            <h3>10.1 Your Right to Terminate</h3>
+            <p>You may stop using the App at any time by uninstalling it from your device.</p>
+
+            <h3>10.2 Our Right to Terminate</h3>
+            <p>We reserve the right to suspend or terminate your access to the App if:</p>
+            <ul>
+                <li>You violate these Terms</li>
+                <li>You engage in illegal or fraudulent activities</li>
+                <li>We are required to do so by law</li>
+                <li>We discontinue the App</li>
+            </ul>
+
+            <h2>11. Updates and Modifications</h2>
+            
+            <h3>11.1 App Updates</h3>
+            <p>We may release updates to improve the App, fix bugs, or add features. You are responsible for installing updates to maintain optimal functionality.</p>
+
+            <h3>11.2 Terms Updates</h3>
+            <p>We may modify these Terms at any time. Changes will be effective when posted in the App with an updated "Last Updated" date. Continued use of the App after changes constitutes acceptance of the modified Terms.</p>
+
+            <h2>12. Governing Law and Dispute Resolution</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of your jurisdiction, without regard to its conflict of law provisions.</p>
+            <p>Any disputes arising from these Terms or your use of the App shall be resolved through:</p>
+            <ul>
+                <li>Good-faith negotiations between the parties</li>
+                <li>Mediation or arbitration (if applicable)</li>
+                <li>The courts of competent jurisdiction in your location</li>
+            </ul>
+
+            <h2>13. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless AbMy Player, its developers, and affiliates from any claims, damages, losses, or expenses (including legal fees) arising from:</p>
+            <ul>
+                <li>Your violation of these Terms</li>
+                <li>Your use of the App for illegal purposes</li>
+                <li>Your infringement of any third-party rights</li>
+                <li>Your IPTV service provider's actions or policies</li>
+            </ul>
+
+            <h2>14. Severability</h2>
+            <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+            <h2>15. Entire Agreement</h2>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and AbMy Player regarding your use of the App.</p>
+
+            <h2>16. Contact Information</h2>
+            <p>If you have any questions or concerns about these Terms, please contact us:</p>
+            <ul>
+                <li><strong>Website:</strong> <a href="https://coderpublisher22.github.io/Player/About-Us.html" style="color: #8B5CF6;">https://coderpublisher22.github.io/Player/About-Us.html</a></li>
+                <li><strong>Email:</strong> coder.publisher.22@gmail.com</li>
+                <li><strong>Developer:</strong> AbMy</li>
+            </ul>
+
+            <div class="warning-box" style="margin-top: 40px;">
+                <p><strong>⚠️ Final Reminder:</strong> AbMy Player is a media player only. You are solely responsible for ensuring that your use of the App and any content accessed through it complies with all applicable laws and regulations. We do not condone or support piracy or copyright infringement.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 AbMy Player. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="https://coderpublisher22.github.io/Player/PrivacyPolicy.html">Privacy Policy</a> • 
+                <a href="terms-conditions.html">Terms & Conditions</a> • 
+                <a href="https://coderpublisher22.github.io/Player/Contact.html">Contact Support</a> • 
+                <a href="https://coderpublisher22.github.io/Player/About-Us.html">About Us</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
