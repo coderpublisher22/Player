@@ -1,0 +1,435 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AbMy Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .particle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: rgba(139, 92, 246, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Glassmorphic header */
+        .header {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15);
+            text-align: center;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        /* Glassmorphic content card */
+        .content {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #8B5CF6;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #A78BFA;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        p, li {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        li::marker {
+            color: #8B5CF6;
+        }
+
+        strong {
+            color: #C4B5FD;
+            font-weight: 600;
+        }
+
+        /* Info boxes */
+        .info-box {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid #8B5CF6;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .footer a {
+            color: #8B5CF6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #A78BFA;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .header, .content { padding: 25px; }
+            body { padding: 15px; }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8B5CF6, #EC4899);
+            z-index: 1000;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    <!-- Animated particles -->
+    <script>
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            document.body.appendChild(particle);
+        }
+
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollIndicator').style.width = scrolled + '%';
+        });
+    </script>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                </svg>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">AbMy Player - Your Privacy Matters</p>
+            <span class="last-updated">Last Updated: November 4, 2025</span>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="info-box">
+                <p><strong>Important:</strong> AbMy Player is committed to protecting your privacy. We do not collect, sell, or share your personal data with third parties. This policy explains how we handle your information.</p>
+            </div>
+
+            <h2>1. Introduction</h2>
+            <p>Welcome to AbMy Player ("we," "our," or "us"). This Privacy Policy explains how we collect, use, and protect your information when you use our IPTV player application.</p>
+            <p><strong>AbMy Player is a media player only.</strong> We do not provide, host, or distribute any IPTV content or services. You must provide your own IPTV service credentials.</p>
+
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Information You Provide</h3>
+            <ul>
+                <li><strong>IPTV Credentials:</strong> Server URL, username, and password (stored locally on your device)</li>
+                <li><strong>M3U Playlists:</strong> Playlist files you import (stored locally)</li>
+                <li><strong>Preferences:</strong> App settings and preferences</li>
+            </ul>
+
+            <h3>2.2 Information We Automatically Collect</h3>
+            <ul>
+                <li><strong>Usage Data:</strong> Favorites, watch history (stored locally)</li>
+                <li><strong>Device Information:</strong> Device model, OS version (for compatibility)</li>
+                <li><strong>App Analytics:</strong> Crash reports and performance data (anonymized)</li>
+            </ul>
+
+            <h3>2.3 Information We DO NOT Collect</h3>
+            <ul>
+                <li>We do NOT collect your personal identity information</li>
+                <li>We do NOT track your viewing habits</li>
+                <li>We do NOT sell your data to third parties</li>
+                <li>We do NOT access your IPTV credentials (they stay on your device)</li>
+            </ul>
+
+            <h2>3. How We Use Your Information</h2>
+            <ul>
+                <li><strong>App Functionality:</strong> To provide IPTV playback features</li>
+                <li><strong>Local Storage:</strong> To save your favorites and watch history</li>
+                <li><strong>App Improvement:</strong> To fix bugs and improve performance</li>
+                <li><strong>Support:</strong> To respond to your support requests</li>
+            </ul>
+
+            <h2>4. Data Storage and Security</h2>
+            
+            <h3>4.1 Local Storage</h3>
+            <p>All your data is stored <strong>locally on your device</strong>:</p>
+            <ul>
+                <li>IPTV credentials are encrypted and stored in secure device storage</li>
+                <li>Favorites and watch history are stored in local database</li>
+                <li>No data is transmitted to our servers</li>
+            </ul>
+
+            <h3>4.2 Security Measures</h3>
+            <ul>
+                <li>AES-256 encryption for sensitive data</li>
+                <li>Secure storage using iOS Keychain</li>
+                <li>No cloud backup of credentials</li>
+                <li>HTTPS connections for network requests</li>
+            </ul>
+
+            <h2>5. Third-Party Services</h2>
+            
+            <h3>5.1 Advertising (if enabled)</h3>
+            <p>If you see ads in the app, we use Google AdMob which may collect:</p>
+            <ul>
+                <li>Device advertising ID (for personalized ads)</li>
+                <li>App usage for ad targeting</li>
+                <li>You can opt-out via iOS Settings → Privacy → Tracking</li>
+            </ul>
+
+            <h3>5.2 Analytics</h3>
+            <p>We may use analytics services to improve the app:</p>
+            <ul>
+                <li>Anonymized crash reports</li>
+                <li>App performance metrics</li>
+                <li>No personally identifiable information</li>
+            </ul>
+
+            <h2>6. Your IPTV Service Provider</h2>
+            <p><strong>Important:</strong> When you use AbMy Player, you connect directly to your IPTV service provider's servers. Their privacy policy applies to:</p>
+            <ul>
+                <li>Content streaming and viewing data</li>
+                <li>Your subscription information</li>
+                <li>Any data they collect during streaming</li>
+            </ul>
+            <p>We have no control over and assume no responsibility for the privacy practices of your IPTV provider.</p>
+
+            <h2>7. Children's Privacy</h2>
+            <p>AbMy Player is not intended for children under 13. We do not knowingly collect information from children. If you believe a child has provided us with information, please contact us immediately.</p>
+
+            <h2>8. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> View all data stored by the app</li>
+                <li><strong>Delete:</strong> Remove all app data by deleting the app</li>
+                <li><strong>Opt-Out:</strong> Disable ad tracking in iOS Settings</li>
+                <li><strong>Export:</strong> Export your favorites and playlists</li>
+            </ul>
+
+            <h2>9. Data Retention</h2>
+            <ul>
+                <li>All data is stored locally on your device</li>
+                <li>Data is deleted when you uninstall the app</li>
+                <li>You can clear data anytime in Settings</li>
+                <li>No data is retained on our servers</li>
+            </ul>
+
+            <h2>10. International Users</h2>
+            <p>AbMy Player is available worldwide. Your data stays on your device regardless of your location. If you're in the EU, you have additional rights under GDPR.</p>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+            <ul>
+                <li>Posting the new policy in the app</li>
+                <li>Updating the "Last Updated" date</li>
+                <li>Showing an in-app notification for significant changes</li>
+            </ul>
+
+            <h2>12. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+            <ul>
+                <li><strong>Website:</strong> <a href="https://coderpublisher22.github.io/Player/About-Us.html" style="color: #8B5CF6;">https://coderpublisher22.github.io/Player/About-Us.html</a></li>
+                <li><strong>Email:</strong> coder.publisher.22@gmail.com</li>
+                <li><strong>Developer:</strong> AbMy</li>
+            </ul>
+
+            <div class="info-box" style="margin-top: 40px; border-left-color: #EC4899;">
+                <p><strong>Remember:</strong> AbMy Player is a media player only. We do not provide IPTV services, content, or subscriptions. You are responsible for ensuring you have legal rights to access any content you stream through the app.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 AbMy Player. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="privacy-policy.html">Privacy Policy</a> • 
+                <a href="terms-conditions.html">Terms & Conditions</a> • 
+                <a href="https://coderpublisher22.github.io/Player/Contact.html">Contact Support</a> • 
+                <a href="https://coderpublisher22.github.io/Player/About-Us.html">About Us</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
