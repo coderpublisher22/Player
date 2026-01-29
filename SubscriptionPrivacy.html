@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Terms & Privacy - AbMy Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --secondary: #A78BFA;
+            --gold: #FFD700;
+            --gold-dark: #FF8C00;
+            --bg-dark: #0f0f1a;
+            --bg-card: #1a1a2e;
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --border: rgba(255, 255, 255, 0.1);
+            --gradient: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6D28D9 100%);
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(109, 40, 217, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section.premium {
+            border-color: rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, var(--bg-card) 100%);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-icon.gold {
+            background: var(--gradient-gold);
+        }
+
+        .section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section ul, .section ol {
+            margin: 16px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .section li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .section ul li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .section.premium ul li::before {
+            color: var(--gold);
+        }
+
+        .highlight-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box.warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .highlight-box.gold {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-table th {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-table td {
+            color: var(--text-secondary);
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: var(--gradient-gold);
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #000;
+            margin-left: 8px;
+        }
+
+        .contact-card {
+            background: var(--gradient);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            padding: 12px 28px;
+            background: white;
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-email:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 40px 16px 30px;
+            }
+            .section {
+                padding: 24px 20px;
+                border-radius: 16px;
+            }
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .pricing-table {
+                font-size: 14px;
+            }
+            .pricing-table th,
+            .pricing-table td {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">📺</div>
+            <span class="logo-text">AbMy Player</span>
+        </div>
+        <h1>Subscription Terms & Privacy</h1>
+        <p class="subtitle">Everything you need to know about AbMy Pro subscriptions and your privacy.</p>
+        <span class="last-updated">Effective Date: January 30, 2026</span>
+    </header>
+
+    <main class="container">
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             📱 ABOUT THE APP
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📱</div>
+                <h2>About AbMy Player</h2>
+            </div>
+            <p>AbMy Player is a premium IPTV media player application that allows you to:</p>
+            <ul>
+                <li>Connect to your own IPTV service using Xtream Codes API or M3U playlists</li>
+                <li>Watch Live TV, Movies, and TV Series content</li>
+                <li>Manage favorites and track your watch history</li>
+                <li>Enjoy a beautiful, modern streaming experience</li>
+            </ul>
+            <div class="highlight-box warning">
+                <p><strong>Important:</strong> AbMy Player is a media player only. We do NOT provide any IPTV content, channels, or streaming services. You must have your own legal IPTV subscription.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             💎 ABMY PRO - PREMIUM SUBSCRIPTION
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section premium">
+            <div class="section-header">
+                <div class="section-icon gold">💎</div>
+                <h2>AbMy Pro Subscription</h2>
+            </div>
+            <p>AbMy Player offers optional premium subscriptions ("AbMy Pro") that unlock additional features:</p>
+            
+            <h3 style="color: var(--gold); margin: 20px 0 12px; font-size: 16px;">Pro Features Include:</h3>
+            <ul>
+                <li><strong>Ad-Free Experience:</strong> Enjoy AbMy Player without any advertisements</li>
+                <li><strong>Unlimited Favorites:</strong> Save as many channels and content as you want</li>
+                <li><strong>Enhanced Player:</strong> Access advanced playback controls and features</li>
+                <li><strong>Priority Support:</strong> Get faster response times from our support team</li>
+                <li><strong>Early Access:</strong> Be the first to try new features and updates</li>
+            </ul>
+
+            <h3 style="color: var(--text-primary); margin: 24px 0 12px; font-size: 16px;">Subscription Plans:</h3>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Billing</th>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Weekly</td>
+                        <td>Billed every 7 days</td>
+                        <td>All Pro features</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly</td>
+                        <td>Billed every month</td>
+                        <td>All Pro features</td>
+                    </tr>
+                    <tr>
+                        <td>Yearly</td>
+                        <td>Billed annually</td>
+                        <td>All Pro features + Best savings</td>
+                    </tr>
+                    <tr>
+                        <td>Lifetime <span class="badge">BEST VALUE</span></td>
+                        <td>One-time purchase</td>
+                        <td>All Pro features forever</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box gold">
+                <p><strong>Lifetime Plan:</strong> Pay once and enjoy all Pro features permanently. No recurring charges, ever!</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             💳 BILLING & PAYMENT
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section premium">
+            <div class="section-header">
+                <div class="section-icon gold">💳</div>
+                <h2>Billing & Payment</h2>
+            </div>
+            <p>All payments for AbMy Pro are processed securely:</p>
+            <ul>
+                <li><strong>Payment Processing:</strong> All transactions are handled by Apple App Store or Google Play Store</li>
+                <li><strong>Payment Method:</strong> Charged to your Apple ID or Google account payment method</li>
+                <li><strong>Currency:</strong> Prices are displayed in your local currency</li>
+                <li><strong>Receipts:</strong> Transaction receipts are sent automatically by Apple/Google</li>
+                <li><strong>Taxes:</strong> Applicable taxes may be added based on your location</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>🔒 Security:</strong> We never see, store, or have access to your payment card details. All payment information is handled securely by Apple and Google.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             �� AUTO-RENEWAL & CANCELLATION
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section premium">
+            <div class="section-header">
+                <div class="section-icon gold">🔄</div>
+                <h2>Auto-Renewal & Cancellation</h2>
+            </div>
+            <p><strong>Auto-Renewal (Weekly, Monthly & Yearly Plans):</strong></p>
+            <ul>
+                <li>Subscriptions automatically renew unless cancelled at least 24 hours before the current period ends</li>
+                <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
+                <li>The renewal price will be the same as the original subscription price</li>
+            </ul>
+
+            <p><strong>How to Cancel:</strong></p>
+            <ul>
+                <li><strong>iOS:</strong> Settings → [Your Name] → Subscriptions → AbMy Player → Cancel Subscription</li>
+                <li><strong>Android:</strong> Google Play Store → Profile → Payments & subscriptions → Subscriptions → AbMy Player → Cancel</li>
+            </ul>
+
+            <div class="highlight-box warning">
+                <p><strong>⚠️ Important:</strong> Cancellation takes effect at the end of your current billing period. You'll retain Pro access until then. Deleting the app does NOT cancel your subscription.</p>
+            </div>
+
+            <p><strong>Lifetime Plan:</strong> The Lifetime plan is a one-time purchase and does not auto-renew. No cancellation is needed.</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             💰 REFUNDS
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section premium">
+            <div class="section-header">
+                <div class="section-icon gold">💰</div>
+                <h2>Refunds</h2>
+            </div>
+            <p>Refund policies are governed by Apple and Google:</p>
+            <ul>
+                <li><strong>iOS Refunds:</strong> Request through Apple at <a href="https://reportaproblem.apple.com" style="color: var(--primary);">reportaproblem.apple.com</a></li>
+                <li><strong>Android Refunds:</strong> Request through Google Play Store within 48 hours of purchase, or contact Google Play support</li>
+                <li><strong>Lifetime Purchases:</strong> Subject to respective app store refund policies</li>
+            </ul>
+            <p>We cannot process refunds directly as all payments are handled by Apple/Google. If you're experiencing issues with your subscription, please contact us and we'll do our best to help.</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             🔒 PRIVACY & DATA
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🔒</div>
+                <h2>Privacy & Your Data</h2>
+            </div>
+            <p>Your privacy is important to us. Here's how we handle your data:</p>
+            
+            <h3 style="color: var(--secondary); margin: 20px 0 12px; font-size: 16px;">Data We Collect:</h3>
+            <ul>
+                <li><strong>Subscription Status:</strong> We verify your subscription status through RevenueCat (our subscription management provider)</li>
+                <li><strong>Anonymous Analytics:</strong> Crash reports and app performance data (no personal info)</li>
+                <li><strong>Device Info:</strong> Basic device information for compatibility purposes</li>
+            </ul>
+
+            <h3 style="color: var(--secondary); margin: 20px 0 12px; font-size: 16px;">Data We DO NOT Collect:</h3>
+            <ul>
+                <li>Your IPTV credentials (stored locally on your device only)</li>
+                <li>Your viewing history or content preferences</li>
+                <li>Your payment card or banking details</li>
+                <li>Personal identification information</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>🛡️ Local Storage:</strong> Your IPTV credentials, favorites, and watch history are stored ONLY on your device. We never upload or access this data.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             📢 ADVERTISING
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📢</div>
+                <h2>Advertising</h2>
+            </div>
+            <p>The free version of AbMy Player displays advertisements:</p>
+            <ul>
+                <li><strong>Ad Provider:</strong> Google AdMob</li>
+                <li><strong>Ad Personalization:</strong> Ads may be personalized based on your device's advertising preferences</li>
+                <li><strong>Opt-Out:</strong> You can limit ad tracking in your device settings</li>
+                <li><strong>Pro Users:</strong> AbMy Pro subscribers enjoy a completely ad-free experience</li>
+            </ul>
+            <p><strong>iOS Users:</strong> You can manage tracking permissions in Settings → Privacy & Security → Tracking</p>
+            <p><strong>Android Users:</strong> You can manage ad personalization in Settings → Google → Ads</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             🔗 THIRD-PARTY SERVICES
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🔗</div>
+                <h2>Third-Party Services</h2>
+            </div>
+            <p>AbMy Player uses the following third-party services:</p>
+            <ul>
+                <li><strong>RevenueCat:</strong> Manages subscription status and in-app purchases</li>
+                <li><strong>Google AdMob:</strong> Displays advertisements (free version only)</li>
+                <li><strong>Apple/Google:</strong> Process all subscription payments</li>
+                <li><strong>Firebase:</strong> App configuration and crash reporting</li>
+            </ul>
+            <p>Each third-party service has its own privacy policy. By using AbMy Player, you agree to their respective terms.</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             ⚖️ TERMS OF USE
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">⚖️</div>
+                <h2>Terms of Use</h2>
+            </div>
+            <p>By using AbMy Player, you agree to:</p>
+            <ul>
+                <li>Use the app only with IPTV services you have legal rights to access</li>
+                <li>Not attempt to reverse engineer, modify, or tamper with the app</li>
+                <li>Not share, resell, or transfer your Pro subscription to others</li>
+                <li>Not use automated systems or bots to access the app</li>
+                <li>Comply with all applicable laws in your jurisdiction</li>
+            </ul>
+            <div class="highlight-box warning">
+                <p><strong>Content Responsibility:</strong> You are solely responsible for ensuring you have legal rights to access any IPTV content you stream through AbMy Player. We do not provide, host, or control any streaming content.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             📝 CHANGES TO TERMS
+             ═══════════════════════════════════════════════════════════════ -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📝</div>
+                <h2>Changes to Terms</h2>
+            </div>
+            <p>We may update these terms from time to time:</p>
+            <ul>
+                <li>Changes will be effective immediately upon posting</li>
+                <li>Continued use of the app constitutes acceptance of new terms</li>
+                <li>For significant changes affecting subscriptions, we will provide advance notice</li>
+                <li>The "Effective Date" at the top will be updated</li>
+            </ul>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             📧 CONTACT
+             ═══════════════════════════════════════════════════════════════ -->
+        <div class="contact-card">
+            <h3>Questions or Concerns?</h3>
+            <p>We're here to help with any subscription or privacy questions.</p>
+            <a href="mailto:support@najfes.me" class="contact-email">
+                support@najfes.me
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 AbMy Player. All rights reserved.</p>
+        <p style="margin-top: 8px;">
+            AbMy Player is a media player only. We do not provide IPTV content or services.
+        </p>
+        <p style="margin-top: 16px;">
+            <a href="term-conditions.html">Terms of Service</a> · <a href="privacy_policy.html">Privacy Policy</a> · <a href="contact-support.html">Contact Support</a>
+        </p>
+    </footer>
+
+</body>
+</html>
